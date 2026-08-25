@@ -1,0 +1,1078 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0F5468" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0A1317" media="(prefers-color-scheme: dark)">
+<meta name="description" content="Teste de perfil comportamental da sync.aero — 40 perguntas, cerca de 7 minutos, resultado completo na hora.">
+<meta name="robots" content="noindex">
+<title>Bússola de Perfil</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap">
+<style>
+:root{
+  --bg:#EFF2F4;
+  --surface:#FFFFFF;
+  --surface-2:#F6F8F9;
+  --ink:#0D1A20;
+  --ink-2:#3C4C55;
+  --muted:#68797F;
+  --line:#DAE2E6;
+  --line-strong:#C3CFD5;
+  --accent:#0F5468;
+  --accent-soft:#E2EDF0;
+  --accent-ink:#0B3E4D;
+  --d1:#12697C;
+  --d2:#474C9B;
+  --d3:#2E7B5C;
+  --d4:#A65E27;
+  --good:#2E7B5C;
+  --warn:#A65E27;
+  --shadow:0 1px 2px rgba(13,26,32,.05), 0 8px 24px -12px rgba(13,26,32,.18);
+  --radius:14px;
+  --btn-ink:#FFFFFF;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0A1317;
+    --surface:#121F25;
+    --surface-2:#0F1B20;
+    --ink:#E7EFF1;
+    --ink-2:#B6C6CC;
+    --muted:#8497A0;
+    --line:#20323A;
+    --line-strong:#2C424C;
+    --accent:#5FBBD1;
+    --accent-soft:#12303A;
+    --accent-ink:#9AD6E5;
+    --d1:#4FB3C8;
+    --d2:#8E93E0;
+    --d3:#5CBE92;
+    --d4:#DB9955;
+    --good:#5CBE92;
+    --warn:#DB9955;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 28px -14px rgba(0,0,0,.7);
+    --btn-ink:#08181E;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0A1317;
+  --surface:#121F25;
+  --surface-2:#0F1B20;
+  --ink:#E7EFF1;
+  --ink-2:#B6C6CC;
+  --muted:#8497A0;
+  --line:#20323A;
+  --line-strong:#2C424C;
+  --accent:#5FBBD1;
+  --accent-soft:#12303A;
+  --accent-ink:#9AD6E5;
+  --d1:#4FB3C8;
+  --d2:#8E93E0;
+  --d3:#5CBE92;
+  --d4:#DB9955;
+  --good:#5CBE92;
+  --warn:#DB9955;
+  --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 28px -14px rgba(0,0,0,.7);
+  --btn-ink:#08181E;
+}
+
+*{box-sizing:border-box}
+button,a,label,input{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  -webkit-text-size-adjust:100%;
+}
+.wrap{max-width:38rem;margin:0 auto;padding:0 20px 64px}
+.screen{display:none}
+.screen.on{display:block;animation:fade .35s ease both}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms !important;transition-duration:.001ms !important}
+}
+
+.eyebrow{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted);
+}
+h1{
+  font-family:"Instrument Serif",Georgia,serif;
+  font-weight:400;font-size:clamp(2.4rem,10vw,3.4rem);
+  line-height:1.02;letter-spacing:-.01em;margin:.35em 0 .2em;
+  text-wrap:balance;
+}
+h2{font-size:1.05rem;font-weight:600;letter-spacing:-.005em;margin:0 0 .5rem}
+p{margin:0 0 1rem;color:var(--ink-2)}
+a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:2px}
+
+/* ---------- masthead / horizon ---------- */
+.masthead{padding:38px 0 0}
+.horizon{
+  height:1px;background:var(--line-strong);position:relative;margin:26px 0 0;
+}
+.horizon::after{
+  content:"";position:absolute;left:0;top:-2px;width:5px;height:5px;
+  background:var(--accent);border-radius:50%;
+}
+.lede{font-size:1.05rem;color:var(--ink-2);margin-top:1.1rem}
+
+.meta-row{display:flex;gap:0;margin:26px 0 30px;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--surface)}
+.meta{flex:1;padding:14px 12px;text-align:center;border-right:1px solid var(--line)}
+.meta:last-child{border-right:0}
+.meta b{display:block;font-family:"IBM Plex Mono",monospace;font-size:1.15rem;font-weight:500;color:var(--ink)}
+.meta span{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+
+/* ---------- form ---------- */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+.field{display:flex;flex-direction:column;gap:6px;margin-bottom:16px}
+label{font-size:.78rem;font-weight:600;letter-spacing:.03em;color:var(--ink)}
+label .opt{font-weight:400;color:var(--muted)}
+input[type=text],input[type=email],input[type=password]{
+  font:inherit;font-size:1rem;padding:13px 14px;border:1px solid var(--line-strong);
+  border-radius:10px;background:var(--surface-2);color:var(--ink);width:100%;
+}
+input:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.consent{display:flex;gap:12px;align-items:flex-start;font-size:.88rem;color:var(--ink-2);margin:4px 0 20px;
+  line-height:1.5;padding:12px;border:1px solid var(--line);border-radius:11px;background:var(--surface-2);cursor:pointer}
+.consent input{width:24px;height:24px;margin:0;flex:none;accent-color:var(--accent)}
+.consent.erro{border-color:var(--warn)}
+.erro-msg{display:none;font-size:.8rem;color:var(--warn);margin-top:-8px;margin-bottom:14px;line-height:1.45}
+.erro-msg.on{display:block}
+input.erro{border-color:var(--warn)}
+
+.btn{
+  font:inherit;font-weight:600;font-size:1rem;
+  background:var(--accent);color:var(--btn-ink);border:0;border-radius:11px;
+  padding:15px 20px;width:100%;cursor:pointer;transition:filter .15s,transform .1s;
+}
+.btn:hover{filter:brightness(1.08)}
+.btn:active{transform:translateY(1px)}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+.btn.ghost{background:transparent;color:var(--accent);border:1px solid var(--line-strong)}
+.btn.small{padding:11px 14px;font-size:.88rem;width:auto}
+
+.footnote{font-size:.76rem;color:var(--muted);line-height:1.55;margin-top:22px}
+.footnote a{color:var(--muted)}
+
+/* ---------- test ---------- */
+.progress-bar{position:sticky;top:0;z-index:5;background:var(--bg);padding:14px 0 12px}
+.track{height:2px;background:var(--line);border-radius:2px;overflow:hidden}
+.track i{display:block;height:100%;background:var(--accent);width:0;transition:width .3s ease}
+.progress-meta{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:9px}
+.counter{font-family:"IBM Plex Mono",monospace;font-size:.78rem;color:var(--muted);letter-spacing:.06em}
+.back{font-size:.78rem;color:var(--muted);background:none;border:0;padding:4px 0;cursor:pointer;font-family:inherit}
+.back[disabled]{opacity:.3}
+
+.statement{
+  font-family:"Instrument Serif",Georgia,serif;font-size:clamp(1.6rem,6.4vw,2.1rem);
+  line-height:1.2;margin:34px 0 30px;text-wrap:balance;color:var(--ink);
+}
+.scale{display:flex;flex-direction:column;gap:9px}
+.opt-btn{
+  font:inherit;text-align:left;display:flex;align-items:center;gap:13px;
+  background:var(--surface);border:1px solid var(--line);border-radius:11px;
+  padding:14px 15px;cursor:pointer;color:var(--ink);transition:border-color .15s,background .15s;
+}
+.opt-btn:hover{border-color:var(--accent)}
+.opt-btn.sel{border-color:var(--accent);background:var(--accent-soft)}
+.dot{width:13px;height:13px;border-radius:50%;border:1.5px solid var(--line-strong);flex:none}
+.opt-btn.sel .dot{border-color:var(--accent);background:var(--accent);box-shadow:inset 0 0 0 2.5px var(--surface)}
+
+/* ---------- result ---------- */
+.code{
+  font-family:"IBM Plex Mono",monospace;font-weight:600;
+  font-size:clamp(3.2rem,17vw,5rem);letter-spacing:.06em;line-height:1;
+  margin:6px 0 4px;color:var(--ink);
+}
+.type-name{font-family:"Instrument Serif",Georgia,serif;font-size:1.9rem;line-height:1.1;margin:0 0 6px}
+.tagline{font-style:italic;font-family:"Instrument Serif",Georgia,serif;font-size:1.15rem;color:var(--muted);margin:0}
+
+.section{margin-top:34px}
+.section-label{
+  font-family:"IBM Plex Mono",monospace;font-size:.68rem;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--muted);
+  padding-bottom:8px;border-bottom:1px solid var(--line);margin-bottom:18px;
+  display:flex;justify-content:space-between;
+}
+
+.gauge{margin-bottom:20px}
+.gauge-head{display:flex;justify-content:space-between;font-size:.8rem;margin-bottom:7px;gap:10px}
+.pole{display:flex;align-items:baseline;gap:6px;min-width:0}
+.pole b{font-family:"IBM Plex Mono",monospace;font-size:.92rem;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap}
+.pole span{color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pole.right{flex-direction:row-reverse;text-align:right}
+.gauge-track{display:flex;height:14px;border-radius:7px;overflow:hidden;position:relative;background:var(--surface-2);border:1px solid var(--line)}
+.gauge-fill{display:flex;align-items:center;transition:width .7s cubic-bezier(.22,1,.36,1)}
+.gauge-track::after{content:"";position:absolute;left:50%;top:0;bottom:0;width:1px;background:var(--line-strong);opacity:.7}
+.strength-tag{font-family:"IBM Plex Mono",monospace;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+
+ul.list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:11px}
+ul.list li{display:flex;gap:11px;font-size:.95rem;color:var(--ink-2);line-height:1.5}
+ul.list li::before{content:"";width:5px;height:5px;border-radius:50%;flex:none;margin-top:.55em;background:var(--good)}
+ul.list.warn li::before{background:var(--warn);border-radius:1px;transform:rotate(45deg)}
+
+.share-grid{display:flex;flex-direction:column;gap:10px;margin-top:16px}
+.share-btn{
+  font:inherit;font-size:.95rem;font-weight:500;display:flex;align-items:center;justify-content:space-between;
+  gap:10px;background:var(--surface);border:1px solid var(--line-strong);border-radius:11px;
+  padding:14px 16px;cursor:pointer;color:var(--ink);text-decoration:none;transition:border-color .15s;
+}
+.share-btn:hover{border-color:var(--accent)}
+.share-btn small{color:var(--muted);font-size:.75rem;font-weight:400}
+.status{
+  display:flex;gap:10px;align-items:flex-start;font-size:.85rem;padding:13px 15px;border-radius:11px;
+  background:var(--surface-2);border:1px solid var(--line);color:var(--ink-2);margin-top:6px;line-height:1.5;
+}
+.status .ico{font-family:"IBM Plex Mono",monospace;font-weight:600;flex:none}
+.status.ok{border-color:var(--good);color:var(--ink-2)}
+.status.ok .ico{color:var(--good)}
+.status.pending .ico{color:var(--muted)}
+
+/* ---------- RH panel ---------- */
+.rh-row{
+  display:flex;align-items:center;gap:12px;padding:14px 4px;border-bottom:1px solid var(--line);
+  width:100%;background:none;border-left:0;border-right:0;border-top:0;text-align:left;font:inherit;color:var(--ink);cursor:pointer;
+}
+.rh-row:hover{background:var(--surface-2)}
+.rh-code{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:.9rem;color:var(--accent);flex:none;width:4.2rem}
+.rh-name{flex:1;min-width:0;font-size:.92rem}
+.rh-name span{display:block;font-size:.74rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rh-date{font-family:"IBM Plex Mono",monospace;font-size:.72rem;color:var(--muted);flex:none}
+.rh-detail{border-bottom:1px solid var(--line);padding:4px 0 18px;animation:fade .25s ease both}
+.rh-detail pre{font-family:"IBM Plex Mono",monospace;font-size:.76rem;line-height:1.6;white-space:pre-wrap;background:var(--surface-2);border:1px solid var(--line);border-radius:10px;padding:14px;margin:6px 0 0;max-height:340px;overflow:auto;color:var(--ink-2)}
+.empty{padding:34px 0;text-align:center;color:var(--muted);font-size:.9rem}
+textarea{font:inherit;font-size:.85rem;font-family:"IBM Plex Mono",monospace;width:100%;min-height:110px;padding:12px;border:1px solid var(--line-strong);border-radius:10px;background:var(--surface-2);color:var(--ink);resize:vertical}
+.row-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.linkish{background:none;border:0;font:inherit;font-size:.8rem;color:var(--muted);cursor:pointer;padding:6px 0;text-decoration:underline;text-underline-offset:2px}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(90px);background:var(--ink);color:var(--bg);padding:11px 18px;border-radius:999px;font-size:.85rem;font-weight:500;z-index:50;transition:transform .3s cubic-bezier(.22,1,.36,1),opacity .2s;pointer-events:none;max-width:90vw;text-align:center;opacity:0;visibility:hidden}
+.toast.on{transform:translateX(-50%) translateY(0);opacity:1;visibility:visible}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+
+<!-- ============ START ============ -->
+<section class="screen on" id="screen-start">
+  <div class="masthead">
+    <div class="eyebrow">sync.aero · Recursos Humanos</div>
+    <h1>Bússola de Perfil</h1>
+    <div class="horizon"></div>
+    <p class="lede">Um questionário de autoconhecimento comportamental baseado nas quatro dimensões do modelo MBTI. Responda com sinceridade — não existe perfil certo ou errado.</p>
+  </div>
+
+  <div class="meta-row">
+    <div class="meta"><b>40</b><span>perguntas</span></div>
+    <div class="meta"><b>~7</b><span>minutos</span></div>
+    <div class="meta"><b>16</b><span>perfis</span></div>
+  </div>
+
+  <div class="card">
+    <div class="field">
+      <label for="f-nome">Nome completo</label>
+      <input type="text" id="f-nome" autocomplete="name" autocapitalize="words" placeholder="Como consta no seu currículo">
+    </div>
+    <p class="erro-msg" id="e-nome">Escreva seu nome completo para continuar.</p>
+    <div class="field">
+      <label for="f-email">E-mail</label>
+      <input type="email" id="f-email" autocomplete="email" inputmode="email" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="voce@email.com">
+    </div>
+    <p class="erro-msg" id="e-email">Confira o e-mail — precisa ter @ e o domínio, como voce@email.com.</p>
+    <div class="field">
+      <label for="f-vaga">Vaga ou área <span class="opt">— opcional</span></label>
+      <input type="text" id="f-vaga" placeholder="Ex: Analista de Operações">
+    </div>
+    <label class="consent" id="box-consent">
+      <input type="checkbox" id="f-consent">
+      <span>Autorizo o envio do meu resultado para a equipe de RH da sync.aero, para fins deste processo seletivo.</span>
+    </label>
+    <p class="erro-msg" id="e-consent">Marque a autorização acima para começar.</p>
+    <button class="btn" type="button" id="btn-start">Começar o teste</button>
+  </div>
+
+  <p class="footnote">
+    O resultado é uma leitura de preferências comportamentais, não uma medida de competência, inteligência ou desempenho. Serve como apoio à conversa, nunca como critério isolado de contratação.
+    <br><br>
+    <button class="linkish" id="btn-rh-open">Acesso RH</button>
+  </p>
+</section>
+
+<!-- ============ TEST ============ -->
+<section class="screen" id="screen-test">
+  <div class="progress-bar">
+    <div class="progress-meta">
+      <button class="back" id="btn-back">← Voltar</button>
+      <span class="counter" id="counter">01 / 40</span>
+    </div>
+    <div class="track"><i id="track-fill"></i></div>
+  </div>
+  <p class="statement" id="statement"></p>
+  <div class="scale" id="scale"></div>
+  <p class="footnote">Escolha a opção mais próxima do seu jeito habitual — no trabalho e fora dele.</p>
+</section>
+
+<!-- ============ RESULT ============ -->
+<section class="screen" id="screen-result">
+  <div class="masthead">
+    <div class="eyebrow" id="r-eyebrow">Resultado · </div>
+    <div class="code" id="r-code">----</div>
+    <h2 class="type-name" id="r-name"></h2>
+    <p class="tagline" id="r-tagline"></p>
+    <div class="horizon"></div>
+  </div>
+
+  <div class="section">
+    <div class="section-label"><span>Dimensões</span><span id="r-clarity"></span></div>
+    <div id="r-gauges"></div>
+  </div>
+
+  <div class="section">
+    <div class="section-label"><span>Quem é esse perfil</span></div>
+    <div id="r-desc"></div>
+  </div>
+
+  <div class="section">
+    <div class="section-label"><span>Forças</span></div>
+    <ul class="list" id="r-forcas"></ul>
+  </div>
+
+  <div class="section">
+    <div class="section-label"><span>Pontos de atenção</span></div>
+    <ul class="list warn" id="r-atencao"></ul>
+  </div>
+
+  <div class="section">
+    <div class="section-label"><span>Enviar para o RH</span></div>
+    <div class="status" id="r-status"><span class="ico">·</span><span id="r-status-txt">Enviando…</span></div>
+    <div class="share-grid">
+      <a class="share-btn" id="sh-whats" target="_blank" rel="noopener">Compartilhar no WhatsApp <small>abre o app</small></a>
+      <a class="share-btn" id="sh-mail">Enviar por e-mail <small>rh@sync.aero</small></a>
+      <button class="share-btn" id="sh-copy">Copiar resultado <small>texto completo</small></button>
+      <button class="share-btn" id="sh-file">Baixar como arquivo <small>.txt</small></button>
+    </div>
+    <p class="footnote">Qualquer um dos botões acima envia o resultado completo — o RH recebe exatamente o mesmo conteúdo.</p>
+  </div>
+
+  <div class="section">
+    <button class="btn ghost" id="btn-restart">Refazer o teste</button>
+  </div>
+</section>
+
+<!-- ============ RH ============ -->
+<section class="screen" id="screen-rh">
+  <div class="masthead">
+    <div class="eyebrow">Área restrita</div>
+    <h1>Painel do RH</h1>
+    <div class="horizon"></div>
+  </div>
+
+  <div id="rh-gate" class="card" style="margin-top:24px">
+    <div class="field">
+      <label for="f-pin">Senha de acesso</label>
+      <input type="password" id="f-pin" autocomplete="off" inputmode="text">
+    </div>
+    <button class="btn" id="btn-pin">Entrar</button>
+    <p class="footnote" style="margin-top:16px">Proteção simples, feita no navegador. Não use este painel para dados sensíveis além do resultado do teste.</p>
+  </div>
+
+  <div id="rh-body" style="display:none">
+    <div class="section" style="margin-top:24px">
+      <div class="section-label"><span>Candidatos</span><span id="rh-count">0</span></div>
+      <div id="rh-list"></div>
+      <div class="row-actions">
+        <button class="btn ghost small" id="btn-csv">Exportar CSV</button>
+        <button class="btn ghost small" id="btn-reload">Atualizar</button>
+        <button class="btn ghost small" id="btn-paste-toggle">Colar resultado</button>
+      </div>
+    </div>
+    <div class="section" id="paste-box" style="display:none">
+      <div class="section-label"><span>Colar resultado recebido</span></div>
+      <p class="footnote" style="margin-top:0">Cole aqui o texto que o candidato enviou por WhatsApp ou e-mail. O painel identifica o candidato e o perfil automaticamente.</p>
+      <textarea id="paste-area" placeholder="Cole o texto do resultado…"></textarea>
+      <div class="row-actions"><button class="btn small" id="btn-paste-save">Adicionar ao painel</button></div>
+    </div>
+    <div class="section">
+      <button class="btn ghost" id="btn-rh-exit">Sair do painel</button>
+    </div>
+  </div>
+</section>
+
+<div class="toast" id="toast"></div>
+</div>
+<script>
+"use strict";
+
+/* ==========================================================
+   CONFIG — ajuste aqui
+   ========================================================== */
+const CONFIG = {
+  empresa: "sync.aero",
+  emailRH: "rh@sync.aero",
+  whatsappRH: "",              // ex: "5511999998888" (só números, com DDI). Vazio = o candidato escolhe o contato.
+  senhaPainel: "rh2026",
+  arquivoDados: "data/resultados.json"
+};
+
+/* ==========================================================
+   PERGUNTAS — 40 afirmações, 10 por dimensão
+   d: 0 = E/I · 1 = S/N · 2 = T/F · 3 = J/P
+   k: 0 = pontua para a 1ª letra · 1 = pontua para a 2ª
+   ========================================================== */
+const QUESTIONS = [
+  {d:0,k:0,t:"Em reuniões, costumo falar minhas ideias assim que elas surgem."},
+  {d:1,k:0,t:"Confio mais em fatos e dados concretos do que em intuições."},
+  {d:2,k:0,t:"Ao decidir, peso os prós e os contras antes de pensar em como as pessoas vão reagir."},
+  {d:3,k:0,t:"Faço listas e gosto de riscar o que já concluí."},
+
+  {d:0,k:1,t:"Depois de um dia cheio de reuniões, preciso de um tempo sozinho para recarregar."},
+  {d:1,k:1,t:"Gosto de imaginar como as coisas poderiam ser diferentes no futuro."},
+  {d:2,k:1,t:"Percebo rápido quando alguém da equipe não está bem."},
+  {d:3,k:1,t:"Trabalho melhor sob pressão, perto do prazo."},
+
+  {d:0,k:0,t:"Conheço pessoas novas com facilidade e puxo assunto sem esforço."},
+  {d:1,k:0,t:"Presto atenção em detalhes práticos que os outros deixam passar."},
+  {d:2,k:0,t:"Prefiro uma crítica direta a um elogio suavizado."},
+  {d:3,k:0,t:"Me incomoda deixar assuntos em aberto."},
+
+  {d:0,k:1,t:"Prefiro pensar bastante antes de me posicionar sobre um assunto."},
+  {d:1,k:1,t:"Me interesso mais pela ideia geral do que pelos passos de execução."},
+  {d:2,k:1,t:"Tenho dificuldade em tomar decisões que prejudiquem alguém, mesmo sendo as corretas."},
+  {d:3,k:1,t:"Prefiro manter as opções em aberto o máximo de tempo possível."},
+
+  {d:0,k:0,t:"Trabalhar em grupo me dá mais energia do que trabalhar sozinho."},
+  {d:1,k:0,t:"Prefiro instruções claras e um passo a passo definido."},
+  {d:2,k:0,t:"Consigo discordar de alguém sem levar a discussão para o lado pessoal."},
+  {d:3,k:0,t:"Planejo minha semana com antecedência."},
+
+  {d:0,k:1,t:"Em grupos grandes, costumo ouvir mais do que falar."},
+  {d:1,k:1,t:"Costumo perceber padrões e conexões entre assuntos bem diferentes."},
+  {d:2,k:1,t:"Para mim, a harmonia do time pesa tanto quanto o resultado."},
+  {d:3,k:1,t:"Mudanças de plano de última hora não me incomodam."},
+
+  {d:0,k:0,t:"Gosto de ambientes movimentados, com gente circulando e conversas acontecendo."},
+  {d:1,k:0,t:"Aprendo melhor fazendo do que estudando a teoria."},
+  {d:2,k:0,t:"Avalio uma ideia pela lógica dela, mesmo vindo de alguém com quem não me dou bem."},
+  {d:3,k:0,t:"Chego cedo aos compromissos."},
+
+  {d:0,k:1,t:"Prefiro mandar uma mensagem a ligar para alguém."},
+  {d:1,k:1,t:"Me pego pensando em “e se…” com frequência."},
+  {d:2,k:1,t:"Costumo elogiar e reconhecer as pessoas com frequência."},
+  {d:3,k:1,t:"Começo várias coisas ao mesmo tempo e vou terminando conforme dá."},
+
+  {d:0,k:0,t:"Costumo pensar melhor quando falo em voz alta com outra pessoa."},
+  {d:1,k:0,t:"Descrevo as situações do jeito que aconteceram, sem muita interpretação."},
+  {d:2,k:0,t:"Em um conflito, meu primeiro instinto é descobrir qual é o fato correto."},
+  {d:3,k:0,t:"Prefiro decidir logo a ficar analisando por muito tempo."},
+
+  {d:0,k:1,t:"Tenho um círculo pequeno de pessoas próximas, e gosto assim."},
+  {d:1,k:1,t:"Me entedio com tarefas repetitivas, mesmo sabendo que são importantes."},
+  {d:2,k:1,t:"Levo em conta os valores pessoais envolvidos antes de bater o martelo."},
+  {d:3,k:1,t:"Gosto de improvisar e ver aonde a coisa leva."}
+];
+
+const DIMS = [
+  {letters:["E","I"], names:["Extroversão","Introversão"], hint:["Energia vem de fora","Energia vem de dentro"], color:"var(--d1)"},
+  {letters:["S","N"], names:["Sensação","Intuição"],       hint:["Foco no concreto","Foco nas possibilidades"], color:"var(--d2)"},
+  {letters:["T","F"], names:["Pensamento","Sentimento"],   hint:["Decide pela lógica","Decide pelos valores"], color:"var(--d3)"},
+  {letters:["J","P"], names:["Julgamento","Percepção"],    hint:["Prefere planejar","Prefere adaptar"], color:"var(--d4)"}
+];
+
+const ESCALA = [
+  "Discordo totalmente","Discordo em parte","Neutro","Concordo em parte","Concordo totalmente"
+];
+
+/* ==========================================================
+   OS 16 PERFIS
+   ========================================================== */
+const TIPOS = {
+ISTJ:{nome:"O Confiável",tag:"Faz o combinado, do jeito combinado, no prazo combinado.",
+desc:["Você é uma pessoa metódica e responsável. Confia no que já foi testado, gosta de processos claros e leva compromissos a sério — quando diz que entrega, entrega. Sua memória para detalhes e sua consistência fazem com que as pessoas ao redor saibam exatamente o que esperar de você.",
+"Prefere resolver as coisas com calma e ordem a improvisar. Em situações confusas, você é quem organiza os fatos e traz a discussão de volta ao chão."],
+forcas:["Extremamente confiável em prazos e compromissos","Enxerga detalhes e inconsistências que passam despercebidos","Mantém a calma e o método em situações de pressão","Organiza processos e documentação com naturalidade","Decide com base em fatos, não em impulso"],
+atencao:["Pode resistir a mudanças mesmo quando elas fazem sentido","Tende a ser rígido com quem trabalha de forma menos estruturada","Corre o risco de se sobrecarregar por não delegar","Nem sempre expressa o que está sentindo"]},
+
+ISFJ:{nome:"O Protetor",tag:"Cuida do time sem precisar de holofote.",
+desc:["Você combina senso prático com uma atenção genuína às pessoas. Percebe o que os outros precisam antes de pedirem e costuma assumir tarefas que ninguém quer, só para o conjunto funcionar. Sua lealdade é longa e discreta.",
+"Gosta de estabilidade e de fazer bem feito. Prefere apoiar do que liderar de frente, mas é justamente esse apoio que sustenta boa parte do que acontece ao seu redor."],
+forcas:["Cuidado real com as pessoas do time","Muita atenção ao detalhe e ao que foi combinado","Cria um ambiente estável e seguro para quem está por perto","Grande memória para preferências, histórico e contexto","Persistente em tarefas longas e pouco glamourosas"],
+atencao:["Dificuldade em dizer não e em impor limites","Costuma engolir insatisfações até acumular","Pode se desvalorizar e não reivindicar reconhecimento","Sofre mais que a média com mudanças bruscas"]},
+
+INFJ:{nome:"O Conselheiro",tag:"Enxerga o que a pessoa quis dizer, não só o que ela disse.",
+desc:["Você tem uma leitura incomum de pessoas e situações. Percebe motivações, tensões e padrões antes que fiquem evidentes, e costuma juntar isso a um senso forte de propósito: precisa que o trabalho signifique alguma coisa.",
+"É reservado, mas não distante — escolhe com cuidado onde investe energia. Quando abraça uma causa ou um projeto, vai fundo e leva outras pessoas junto."],
+forcas:["Leitura apurada de pessoas e de dinâmicas de grupo","Pensa a médio e longo prazo com clareza","Comunica ideias complexas de forma acessível","Consistência entre o que diz e o que faz","Ajuda os outros a enxergarem o próprio potencial"],
+atencao:["Exigência alta consigo mesmo, chegando ao desgaste","Tende a evitar conflito até que ele fique grande","Pode idealizar situações e se frustrar com a realidade","Precisa de tempo sozinho e nem sempre pede por ele"]},
+
+INTJ:{nome:"O Estrategista",tag:"Já pensou três passos à frente antes de a reunião começar.",
+desc:["Você pensa em sistemas. Enxerga como as peças se conectam, identifica o gargalo real e propõe uma solução estrutural em vez de um remendo. Tem padrões altos e pouca paciência com ineficiência.",
+"Trabalha bem com autonomia e não precisa de plateia. Prefere ser convencido por um bom argumento a por hierarquia — e espera o mesmo dos outros."],
+forcas:["Visão estratégica e capacidade de planejar a longo prazo","Independência intelectual e decisões bem fundamentadas","Identifica falhas de lógica e de processo rapidamente","Aprende sozinho, com velocidade","Mantém o foco no objetivo mesmo sob ruído"],
+atencao:["Pode soar frio ou impaciente ao criticar","Subestima o peso das emoções nas decisões do time","Dificuldade em delegar por achar que ninguém fará igual","Tende a descartar ideias antes de ouvi-las por inteiro"]},
+
+ISTP:{nome:"O Solucionador",tag:"Cabeça fria quando tudo está pegando fogo.",
+desc:["Você aprende mexendo. Entende como as coisas funcionam desmontando-as, e resolve problemas práticos com uma economia de movimentos que impressiona. Em crise, sua temperatura emocional cai em vez de subir.",
+"Não gosta de burocracia nem de discussão longa sem conclusão. Prefere autonomia, ferramentas boas e espaço para fazer do seu jeito."],
+forcas:["Excelente em resolver problemas concretos e urgentes","Mantém a calma sob pressão real","Aprende ferramentas e técnicas novas com rapidez","Objetivo e econômico na comunicação","Flexível diante de imprevistos"],
+atencao:["Pouca paciência com reuniões, processos e relatórios","Pode deixar tarefas de rotina ou de follow-up para trás","Nem sempre comunica o que está fazendo","Evita conversas sobre sentimentos, inclusive as necessárias"]},
+
+ISFP:{nome:"O Artesão",tag:"Faz com capricho e sem alarde.",
+desc:["Você tem sensibilidade estética e atenção ao presente. Valoriza fazer as coisas com cuidado, gosta de trabalhos em que dá para ver o resultado, e tem um senso forte — ainda que silencioso — do que é certo para você.",
+"É adaptável no dia a dia e resistente quando alguém pisa nos seus valores. Prefere mostrar do que argumentar."],
+forcas:["Cuidado e capricho na execução","Sensibilidade para pessoas e para o ambiente","Adapta-se bem a mudanças de rota","Age com discrição e sem disputar espaço","Fidelidade aos próprios valores"],
+atencao:["Evita confronto e pode se calar em discussões importantes","Dificuldade com planejamento de longo prazo","Leva críticas para o lado pessoal com facilidade","Pode adiar decisões esperando o momento certo"]},
+
+INFP:{nome:"O Idealista",tag:"Precisa acreditar naquilo que está fazendo.",
+desc:["Você é movido por valores. Precisa que o trabalho tenha sentido, e quando tem, sua dedicação é desproporcional. Tem uma vida interior rica, imagina possibilidades com facilidade e escreve ou se expressa melhor do que a média.",
+"É acolhedor com as pessoas e crítico consigo. Prefere profundidade a volume — poucos vínculos, mas verdadeiros."],
+forcas:["Criatividade e originalidade na forma de pensar","Empatia genuína, sem julgamento","Fidelidade a princípios, mesmo sob pressão","Boa comunicação escrita e capacidade de dar sentido às coisas","Enxerga potencial nas pessoas antes dos outros"],
+atencao:["Autocrítica pesada e tendência a procrastinar","Dificuldade com prazos, métricas e tarefas burocráticas","Pode se magoar com feedbacks diretos","Perde motivação rápido quando não vê propósito"]},
+
+INTP:{nome:"O Analista",tag:"Antes de responder, quer entender o problema de verdade.",
+desc:["Você é curioso e preciso. Gosta de destrinchar ideias, encontrar a inconsistência escondida e reconstruir o raciocínio a partir do zero. Não aceita explicação pela metade, nem quando ela vem de você mesmo.",
+"Trabalha melhor com liberdade e problemas interessantes. Rotina e política interna drenam sua energia."],
+forcas:["Raciocínio analítico e rigor lógico","Faz perguntas que mudam o rumo da discussão","Aprende com profundidade e por conta própria","Imparcial ao avaliar ideias, venham de onde vierem","Confortável com problemas ambíguos e abertos"],
+atencao:["Pode se perder na análise e demorar a concluir","Tende a negligenciar prazos e detalhes administrativos","Comunicação às vezes técnica demais para o interlocutor","Pouco atento ao clima emocional do time"]},
+
+ESTP:{nome:"O Dinâmico",tag:"Resolve agora, ajusta depois.",
+desc:["Você é orientado à ação. Lê o ambiente rápido, decide rápido e não trava diante de imprevistos. Aprende na prática e costuma ser quem destrava a situação enquanto os outros ainda discutem.",
+"É direto, sociável e negocia bem. Prefere resultado visível a plano bonito."],
+forcas:["Age com rapidez e desenvoltura sob pressão","Ótima leitura do ambiente e das pessoas em tempo real","Negociação e persuasão naturais","Não trava diante de imprevistos","Traz energia e ritmo para o time"],
+atencao:["Pode decidir antes de reunir informação suficiente","Impaciência com planejamento e processos longos","Corre riscos que nem sempre valem a pena","Dificuldade em manter foco em tarefas longas e repetitivas"]},
+
+ESFP:{nome:"O Animador",tag:"Sabe o nome de todo mundo na primeira semana.",
+desc:["Você é caloroso, presente e prático. Melhora o clima de qualquer sala e lida bem com público, cliente e situação inesperada. Prefere aprender junto com as pessoas a estudar sozinho.",
+"Vive bem o presente e tem um talento particular para transformar tarefa chata em momento tolerável."],
+forcas:["Cria vínculo com as pessoas com muita facilidade","Excelente em atendimento, vendas e contato direto","Resolve o problema prático da hora sem drama","Traz leveza e ânimo para o ambiente","Adapta-se rapidamente a contextos novos"],
+atencao:["Dificuldade com planejamento e prazos mais longos","Pode evitar conversas difíceis para preservar o clima","Distrai-se com facilidade em tarefas monótonas","Leva críticas para o lado pessoal"]},
+
+ENFP:{nome:"O Inspirador",tag:"Chega com dez ideias e entusiasmo para todas.",
+desc:["Você é criativo, comunicativo e movido por possibilidades. Conecta pessoas e assuntos que ninguém tinha ligado, e sua empolgação contagia — costuma ser o motor inicial de projetos novos.",
+"Precisa de variedade e autonomia. Trabalho repetitivo e microgerenciamento apagam sua energia rapidamente."],
+forcas:["Geração de ideias e leitura de oportunidades","Comunicação envolvente e capacidade de engajar","Conecta pessoas, áreas e assuntos","Empatia e interesse genuíno pelos outros","Adapta-se e improvisa bem"],
+atencao:["Começa mais coisas do que consegue terminar","Dificuldade com rotina, detalhe e acompanhamento","Perde interesse quando o projeto vira execução","Pode se comprometer além da própria capacidade"]},
+
+ENTP:{nome:"O Inovador",tag:"Adora a pergunta que ninguém queria ouvir.",
+desc:["Você pensa rápido e gosta de desafiar o consenso. Vê ângulos alternativos, argumenta bem e transforma restrição em problema interessante. Debater, para você, é forma de pensar — não de brigar.",
+"Se entedia com o que já está resolvido e prospera onde o caminho ainda não existe."],
+forcas:["Criatividade estratégica e visão de alternativas","Argumentação ágil e boa retórica","Questiona premissas que o time nem percebia","Confortável com risco e ambiguidade","Aprende assuntos novos com velocidade"],
+atencao:["Pode debater além do necessário e cansar o time","Dificuldade em concluir e sustentar a operação","Costuma soar provocativo sem intenção","Perde interesse na fase de execução"]},
+
+ESTJ:{nome:"O Executivo",tag:"Transforma intenção em plano com dono e prazo.",
+desc:["Você organiza. Define o que precisa ser feito, por quem e até quando, e cobra com naturalidade. Tem senso de responsabilidade forte e não foge de decisão difícil.",
+"Valoriza clareza, hierarquia funcional e resultado. Prefere um problema exposto agora a uma surpresa depois."],
+forcas:["Organização e capacidade de execução","Toma decisões difíceis sem adiar","Comunica expectativas com clareza","Assume responsabilidade pelo resultado do time","Muito consistente em prazos e entregas"],
+atencao:["Pode ser autoritário ou inflexível sob pressão","Tende a subestimar o lado humano das decisões","Resistência a métodos que fogem do já estabelecido","Impaciência com quem tem ritmo diferente"]},
+
+ESFJ:{nome:"O Anfitrião",tag:"Faz o time funcionar como time.",
+desc:["Você é atento, prestativo e organizado com pessoas. Lembra de aniversários e de combinados, cuida para que ninguém fique de fora e costuma ser a cola informal de qualquer grupo.",
+"Gosta de harmonia e de coisas bem-feitas. Trabalha melhor quando sabe que o esforço é reconhecido."],
+forcas:["Constrói e mantém relações de confiança","Organiza pessoas, rotinas e combinados","Muito atento às necessidades do time","Confiável em prazos e responsabilidades","Comunica-se de forma calorosa e clara"],
+atencao:["Depende bastante de reconhecimento externo","Evita conflito mesmo quando ele é necessário","Pode assumir responsabilidades demais","Desconforto com mudanças que quebram a rotina do grupo"]},
+
+ENFJ:{nome:"O Mentor",tag:"Desenvolve gente enquanto entrega resultado.",
+desc:["Você lidera pelo vínculo. Percebe o que motiva cada pessoa, dá feedback com cuidado e consegue alinhar um grupo em torno de um objetivo comum sem precisar impor.",
+"Tem visão de futuro e senso de responsabilidade sobre o time. Costuma investir mais nos outros do que em si."],
+forcas:["Liderança inspiradora e comunicação persuasiva","Desenvolve e dá feedback com sensibilidade","Alinha o time em torno de um objetivo comum","Antecipa tensões e atua antes de virar problema","Compromisso forte com o coletivo"],
+atencao:["Assume problemas dos outros como se fossem seus","Dificuldade em receber crítica sem se abalar","Pode evitar decisões impopulares por medo do impacto","Tende a se esgotar cuidando de todo mundo"]},
+
+ENTJ:{nome:"O Comandante",tag:"Aponta a direção e puxa o time para lá.",
+desc:["Você é decisivo e orientado a objetivo. Enxerga o cenário completo, define prioridade e mobiliza recursos com rapidez. Confronto direto não te assusta — desperdício de tempo, sim.",
+"Espera competência e tem padrões altos, para si e para os outros. Assume o comando naturalmente quando o espaço está vago."],
+forcas:["Visão estratégica somada à capacidade de executar","Decide rápido e assume as consequências","Comunica direção com clareza e convicção","Confortável em negociações e confrontos","Alta energia para metas ambiciosas"],
+atencao:["Pode atropelar pessoas ao acelerar o processo","Impaciência com ritmos e estilos diferentes","Tende a dominar a conversa sem perceber","Subestima o custo emocional das mudanças que propõe"]}
+};
+
+/* ==========================================================
+   ESTADO E UTILITÁRIOS
+   ========================================================== */
+const $ = (id)=>document.getElementById(id);
+const state = { perfil:{}, respostas:new Array(QUESTIONS.length).fill(null), idx:0, resultado:null };
+let cacheResultados = null;
+
+function toast(msg){
+  const t = $("toast"); t.textContent = msg; t.classList.add("on");
+  clearTimeout(toast._t); toast._t = setTimeout(()=>t.classList.remove("on"), 2600);
+}
+function topo(){
+  try{ window.scrollTo(0,0); }catch(e){}
+  try{ document.documentElement.scrollTop = 0; document.body.scrollTop = 0; }catch(e){}
+}
+function show(id){
+  document.querySelectorAll(".screen").forEach(el=>el.classList.remove("on"));
+  const alvo = $(id); if(alvo) alvo.classList.add("on");
+  topo();
+}
+function on(id, evt, fn){
+  const el = $(id);
+  if(!el){ return; }
+  el.addEventListener(evt, function(e){
+    try{ fn(e); }catch(err){ console.error(err); toast("Ops — algo falhou aqui. Recarregue a página."); }
+  });
+}
+window.addEventListener("error", function(){ /* não trava a página */ });
+function stash(){
+  try{ sessionStorage.setItem("sync_mbti_run", JSON.stringify({p:state.perfil,r:state.respostas,i:state.idx})); }catch(e){}
+}
+function unstash(){
+  try{
+    const raw = sessionStorage.getItem("sync_mbti_run"); if(!raw) return false;
+    const o = JSON.parse(raw);
+    if(!o || !o.p || !o.p.nome || !Array.isArray(o.r) || o.r.length !== QUESTIONS.length) return false;
+    if(o.r.every(v=>v===null)) return false;
+    state.perfil=o.p; state.respostas=o.r; state.idx=Math.min(o.i||0, QUESTIONS.length-1);
+    return true;
+  }catch(e){ return false; }
+}
+function b64enc(s){ return btoa(unescape(encodeURIComponent(s))); }
+function b64dec(s){ return decodeURIComponent(escape(atob(s))); }
+function fmtData(iso){
+  const d = new Date(iso);
+  return d.toLocaleDateString("pt-BR",{day:"2-digit",month:"2-digit",year:"2-digit"});
+}
+
+/* ==========================================================
+   CÁLCULO DO RESULTADO
+   ========================================================== */
+function calcular(){
+  const pct = [];
+  for(let d=0; d<4; d++){
+    let a=0, total=0;
+    QUESTIONS.forEach((q,i)=>{
+      if(q.d!==d) return;
+      const v = state.respostas[i] || 3;      // 1..5
+      const paraChave = v-1;                  // 0..4
+      const paraOutra = 5-v;                  // 4..0
+      a += (q.k===0) ? paraChave : paraOutra;
+      total += 4;
+    });
+    pct.push(Math.round((a/total)*100));
+  }
+  const letras = pct.map((p,i)=> p>=50 ? DIMS[i].letters[0] : DIMS[i].letters[1]);
+  const forca = pct.map(p=>{
+    const diff = Math.abs(p-50);
+    if(diff < 8) return "equilibrada";
+    if(diff < 20) return "leve";
+    if(diff < 33) return "moderada";
+    return "clara";
+  });
+  return { tipo: letras.join(""), pct, forca };
+}
+
+/* ==========================================================
+   TELA DO TESTE
+   ========================================================== */
+function renderQuestion(){
+  const q = QUESTIONS[state.idx];
+  $("statement").textContent = q.t;
+  $("counter").textContent = String(state.idx+1).padStart(2,"0") + " / " + QUESTIONS.length;
+  $("track-fill").style.width = ((state.idx)/QUESTIONS.length*100) + "%";
+  $("btn-back").disabled = state.idx === 0;
+
+  const scale = $("scale");
+  scale.innerHTML = "";
+  ESCALA.forEach((rot,i)=>{
+    const v = i+1;
+    const b = document.createElement("button");
+    b.className = "opt-btn" + (state.respostas[state.idx]===v ? " sel" : "");
+    b.type = "button";
+    b.innerHTML = '<span class="dot"></span><span></span>';
+    b.lastChild.textContent = rot;
+    b.addEventListener("click", ()=>responder(v));
+    scale.appendChild(b);
+  });
+}
+function responder(v){
+  state.respostas[state.idx] = v;
+  stash();
+  document.querySelectorAll("#scale .opt-btn").forEach((el,i)=>el.classList.toggle("sel", i+1===v));
+  setTimeout(()=>{
+    if(state.idx < QUESTIONS.length-1){ state.idx++; renderQuestion(); topo(); }
+    else { finalizar(); }
+  }, 190);
+}
+function voltar(){
+  if(state.idx>0){ state.idx--; renderQuestion(); }
+}
+
+/* ==========================================================
+   TELA DE RESULTADO
+   ========================================================== */
+function finalizar(){
+  const r = calcular();
+  const tipo = TIPOS[r.tipo];
+  state.resultado = {
+    id: "c" + Date.now().toString(36) + Math.random().toString(36).slice(2,6),
+    nome: state.perfil.nome, email: state.perfil.email, vaga: state.perfil.vaga || "",
+    tipo: r.tipo, pct: r.pct, forca: r.forca, data: new Date().toISOString()
+  };
+  try{ sessionStorage.removeItem("sync_mbti_run"); }catch(e){}
+
+  $("r-eyebrow").textContent = "Resultado · " + state.perfil.nome;
+  $("r-code").textContent = r.tipo;
+  $("r-name").textContent = tipo.nome;
+  $("r-tagline").textContent = "“" + tipo.tag + "”";
+  $("r-clarity").textContent = "";
+
+  const g = $("r-gauges"); g.innerHTML = "";
+  r.pct.forEach((p,i)=>{
+    const dim = DIMS[i], left = p, right = 100-p, leftWins = p>=50;
+    const el = document.createElement("div");
+    el.className = "gauge";
+    el.innerHTML =
+      '<div class="gauge-head">'+
+        '<span class="pole"><b>'+dim.letters[0]+' '+left+'%</b><span>'+dim.names[0]+'</span></span>'+
+        '<span class="pole right"><b>'+right+'% '+dim.letters[1]+'</b><span>'+dim.names[1]+'</span></span>'+
+      '</div>'+
+      '<div class="gauge-track">'+
+        '<div class="gauge-fill" style="width:0%;'+(leftWins?"background:"+dim.color+";":"")+'"></div>'+
+        '<div class="gauge-fill" style="width:0%;'+(leftWins?"":"background:"+dim.color+";")+'"></div>'+
+      '</div>'+
+      '<div class="strength-tag" style="margin-top:6px">'+(r.forca[i]==="equilibrada"
+        ? 'Equilíbrio entre '+dim.names[0].toLowerCase()+' e '+dim.names[1].toLowerCase()+' — os dois lados aparecem'
+        : 'Preferência '+r.forca[i]+' por '+dim.names[leftWins?0:1].toLowerCase()+' — '+dim.hint[leftWins?0:1].toLowerCase())+'</div>';
+    g.appendChild(el);
+    requestAnimationFrame(()=>{
+      const fills = el.querySelectorAll(".gauge-fill");
+      fills[0].style.width = left+"%"; fills[1].style.width = right+"%";
+    });
+  });
+
+  $("r-desc").innerHTML = tipo.desc.map(p=>"<p>"+p+"</p>").join("");
+  $("r-forcas").innerHTML = tipo.forcas.map(f=>"<li>"+f+"</li>").join("");
+  $("r-atencao").innerHTML = tipo.atencao.map(f=>"<li>"+f+"</li>").join("");
+
+  const texto = montarTexto();
+  const waBase = CONFIG.whatsappRH ? "https://wa.me/"+CONFIG.whatsappRH+"?text=" : "https://wa.me/?text=";
+  $("sh-whats").href = waBase + encodeURIComponent(texto);
+  $("sh-mail").href = "mailto:"+CONFIG.emailRH+"?subject="+encodeURIComponent("Teste de perfil — "+state.perfil.nome+" ("+r.tipo+")")+"&body="+encodeURIComponent(texto);
+
+  show("screen-result");
+  salvarNoPainel();
+}
+
+function montarTexto(){
+  const r = state.resultado, tipo = TIPOS[r.tipo];
+  const linhas = [];
+  linhas.push("TESTE DE PERFIL COMPORTAMENTAL — "+CONFIG.empresa);
+  linhas.push("");
+  linhas.push("Candidato: "+r.nome);
+  linhas.push("E-mail: "+r.email);
+  if(r.vaga) linhas.push("Vaga: "+r.vaga);
+  linhas.push("Data: "+new Date(r.data).toLocaleString("pt-BR"));
+  linhas.push("");
+  linhas.push("PERFIL: "+r.tipo+" — "+tipo.nome);
+  linhas.push(tipo.tag);
+  linhas.push("");
+  linhas.push("DIMENSÕES");
+  r.pct.forEach((p,i)=>{
+    const d = DIMS[i], win = p>=50?0:1;
+    const rot = r.forca[i]==="equilibrada" ? "equilíbrio entre os dois" : "preferência "+r.forca[i]+" por "+d.names[win].toLowerCase();
+    linhas.push("· "+d.letters[0]+" "+p+"% / "+d.letters[1]+" "+(100-p)+"%  →  "+rot);
+  });
+  linhas.push("");
+  linhas.push("QUEM É ESSE PERFIL");
+  tipo.desc.forEach(p=>{ linhas.push(p); linhas.push(""); });
+  linhas.push("FORÇAS");
+  tipo.forcas.forEach(f=>linhas.push("+ "+f));
+  linhas.push("");
+  linhas.push("PONTOS DE ATENÇÃO");
+  tipo.atencao.forEach(f=>linhas.push("! "+f));
+  linhas.push("");
+  linhas.push("Resultado gerado pela Bússola de Perfil · "+CONFIG.empresa);
+  linhas.push("SYNC1."+b64enc(JSON.stringify({i:r.id,n:r.nome,e:r.email,v:r.vaga,t:r.tipo,p:r.pct,f:r.forca,d:r.data})));
+  return linhas.join("\n");
+}
+
+function setStatus(kind, txt){
+  const box = $("r-status");
+  box.className = "status " + kind;
+  box.querySelector(".ico").textContent = kind==="ok" ? "✓" : (kind==="pending" ? "·" : "!");
+  $("r-status-txt").textContent = txt;
+}
+
+/* ==========================================================
+   ARMAZENAMENTO — painel do RH
+   ========================================================== */
+async function getArtifact(){
+  try{
+    if(!window.claude || typeof window.claude.use !== "function") return null;
+    return await window.claude.use("artifact");
+  }catch(e){ return null; }
+}
+function lerLocal(){
+  try{ return JSON.parse(localStorage.getItem("sync_mbti_db") || "[]"); }catch(e){ return []; }
+}
+function gravarLocal(lista){
+  try{ localStorage.setItem("sync_mbti_db", JSON.stringify(lista)); }catch(e){}
+}
+function mesclar(a,b){
+  const map = new Map();
+  [].concat(a||[], b||[]).forEach(r=>{ if(r && r.id) map.set(r.id, r); });
+  return Array.from(map.values()).sort((x,y)=> (y.data||"").localeCompare(x.data||""));
+}
+async function carregarResultados(force){
+  if(cacheResultados && !force) return cacheResultados;
+  let remoto = [];
+  try{
+    const res = await fetch(CONFIG.arquivoDados, {cache:"no-store"});
+    if(res.ok) remoto = await res.json();
+  }catch(e){}
+  cacheResultados = mesclar(Array.isArray(remoto)?remoto:[], lerLocal());
+  return cacheResultados;
+}
+
+async function salvarNoPainel(){
+  setStatus("pending","Enviando seu resultado para o RH…");
+  const entrada = state.resultado;
+  gravarLocal(mesclar(lerLocal(), [entrada]));
+
+  const art = await getArtifact();
+  if(!art){
+    setStatus("pending", "Escolha abaixo como enviar seu resultado para o RH — leva dois toques.");
+    return;
+  }
+  const lista = mesclar(await carregarResultados(true), [entrada]);
+  try{
+    await art.publish({ [CONFIG.arquivoDados]: JSON.stringify(lista, null, 0) });
+    cacheResultados = lista;
+    setStatus("ok","Resultado enviado ao RH da "+CONFIG.empresa+". Você já pode fechar esta página.");
+  }catch(err){
+    const code = (err && err.code) || "";
+    if(code === "conflict"){
+      try{
+        const lista2 = mesclar(await carregarResultados(true), [entrada]);
+        await art.publish({ [CONFIG.arquivoDados]: JSON.stringify(lista2, null, 0) });
+        cacheResultados = lista2;
+        setStatus("ok","Resultado enviado ao RH da "+CONFIG.empresa+".");
+        return;
+      }catch(e2){}
+    }
+    setStatus("pending", "Escolha abaixo como enviar seu resultado para o RH — leva dois toques.");
+  }
+}
+
+/* ==========================================================
+   COMPARTILHAMENTO
+   ========================================================== */
+async function copiarTexto(){
+  const txt = montarTexto();
+  try{
+    await navigator.clipboard.writeText(txt);
+    toast("Resultado copiado");
+  }catch(e){
+    const ta = document.createElement("textarea");
+    ta.value = txt; ta.style.position="fixed"; ta.style.opacity="0";
+    document.body.appendChild(ta); ta.select();
+    try{ document.execCommand("copy"); toast("Resultado copiado"); }
+    catch(e2){ toast("Não consegui copiar — selecione o texto manualmente"); }
+    ta.remove();
+  }
+}
+async function baixarArquivo(){
+  const nome = "perfil-" + (state.resultado.nome||"candidato").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"") + "-" + state.resultado.tipo + ".txt";
+  let dl = null;
+  try{ if(window.claude && window.claude.use) dl = await window.claude.use("downloads"); }catch(e){}
+  if(dl){
+    try{ await dl.save({filename:nome, data:montarTexto()}); toast("Arquivo salvo"); return; }
+    catch(err){ if(err && err.code === "declined") return; }
+  }
+  const blob = new Blob([montarTexto()], {type:"text/plain;charset=utf-8"});
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob); a.download = nome;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(()=>URL.revokeObjectURL(a.href), 4000);
+  toast("Download iniciado");
+}
+
+/* ==========================================================
+   PAINEL DO RH
+   ========================================================== */
+async function renderPainel(){
+  const lista = await carregarResultados(true);
+  const box = $("rh-list");
+  $("rh-count").textContent = lista.length + (lista.length===1 ? " candidato" : " candidatos");
+  if(!lista.length){
+    box.innerHTML = '<div class="empty">Nenhum resultado por aqui ainda.<br>Assim que alguém concluir o teste, ele aparece nesta lista.</div>';
+    return;
+  }
+  box.innerHTML = "";
+  lista.forEach(r=>{
+    const b = document.createElement("button");
+    b.className = "rh-row"; b.type = "button";
+    b.innerHTML = '<span class="rh-code"></span><span class="rh-name"><span class="nm"></span><span class="sb"></span></span><span class="rh-date"></span>';
+    b.querySelector(".rh-code").textContent = r.tipo;
+    b.querySelector(".nm").textContent = r.nome || "(sem nome)";
+    b.querySelector(".sb").textContent = [r.vaga, r.email].filter(Boolean).join(" · ");
+    b.querySelector(".rh-date").textContent = fmtData(r.data);
+    b.addEventListener("click", ()=>abrirCandidato(r, b));
+    box.appendChild(b);
+  });
+}
+function abrirCandidato(r, row){
+  const aberto = row.nextElementSibling && row.nextElementSibling.classList.contains("rh-detail");
+  document.querySelectorAll(".rh-detail").forEach(el=>el.remove());
+  if(aberto) return;
+  const salvo = state.resultado, salvoP = state.perfil;
+  state.resultado = r; state.perfil = {nome:r.nome, email:r.email, vaga:r.vaga};
+  const txt = montarTexto();
+  state.resultado = salvo; state.perfil = salvoP;
+
+  const det = document.createElement("div");
+  det.className = "rh-detail";
+  const pre = document.createElement("pre");
+  pre.textContent = txt.replace(/\nSYNC1\.[^\n]*/, "");
+  const acts = document.createElement("div");
+  acts.className = "row-actions";
+  const bc = document.createElement("button");
+  bc.className = "btn ghost small"; bc.type = "button"; bc.textContent = "Copiar este resultado";
+  bc.addEventListener("click", ()=>{
+    (navigator.clipboard ? navigator.clipboard.writeText(txt) : Promise.reject())
+      .then(()=>toast("Resultado copiado")).catch(()=>toast("Não consegui copiar"));
+  });
+  const bm = document.createElement("a");
+  bm.className = "btn ghost small"; bm.style.textDecoration = "none"; bm.style.textAlign = "center";
+  bm.href = "mailto:?subject=" + encodeURIComponent("Perfil " + r.tipo + " — " + (r.nome||"")) + "&body=" + encodeURIComponent(txt);
+  bm.textContent = "Encaminhar por e-mail";
+  acts.appendChild(bc); acts.appendChild(bm);
+  det.appendChild(pre); det.appendChild(acts);
+  row.insertAdjacentElement("afterend", det);
+}
+function exportarCSV(){
+  const lista = cacheResultados || [];
+  const head = ["Data","Nome","E-mail","Vaga","Perfil","E%","I%","S%","N%","T%","F%","J%","P%"];
+  const linhas = [head.join(";")];
+  lista.forEach(r=>{
+    const p = r.pct || [0,0,0,0];
+    linhas.push([
+      new Date(r.data).toLocaleString("pt-BR"), r.nome||"", r.email||"", r.vaga||"", r.tipo||"",
+      p[0], 100-p[0], p[1], 100-p[1], p[2], 100-p[2], p[3], 100-p[3]
+    ].map(v=>String(v).replace(/;/g,",")).join(";"));
+  });
+  const csv = "﻿" + linhas.join("\n");
+  const blob = new Blob([csv], {type:"text/csv;charset=utf-8"});
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob); a.download = "resultados-perfil-sync.csv";
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(()=>URL.revokeObjectURL(a.href), 4000);
+  toast("CSV exportado");
+}
+function colarResultado(){
+  const txt = $("paste-area").value || "";
+  const m = txt.match(/SYNC1\.([A-Za-z0-9+/=]+)/);
+  if(!m){ toast("Não encontrei o código do resultado nesse texto"); return; }
+  try{
+    const o = JSON.parse(b64dec(m[1]));
+    const reg = {id:o.i, nome:o.n, email:o.e, vaga:o.v, tipo:o.t, pct:o.p, forca:o.f, data:o.d};
+    cacheResultados = mesclar(cacheResultados||[], [reg]);
+    gravarLocal(mesclar(lerLocal(), [reg]));
+    $("paste-area").value = "";
+    renderPainel();
+    toast((reg.nome||"Candidato") + " adicionado");
+  }catch(e){ toast("Código inválido"); }
+}
+
+/* ==========================================================
+   INICIALIZAÇÃO
+   ========================================================== */
+function limparErros(){
+  ["e-nome","e-email","e-consent"].forEach(id=>{ const el=$(id); if(el) el.classList.remove("on"); });
+  ["f-nome","f-email"].forEach(id=>{ const el=$(id); if(el) el.classList.remove("erro"); });
+  const bc = $("box-consent"); if(bc) bc.classList.remove("erro");
+}
+function marcarErro(campo, msg){
+  const c = $(campo), m = $(msg);
+  if(c) c.classList.add("erro");
+  if(m) m.classList.add("on");
+  return c;
+}
+function emailValido(v){
+  return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
+}
+function comecar(){
+  limparErros();
+  const nome  = ($("f-nome").value || "").trim().replace(/\s+/g," ");
+  const email = ($("f-email").value || "").trim().replace(/\s+/g,"").toLowerCase();
+  const ok    = $("f-consent").checked;
+  let primeiro = null;
+
+  if(nome.length < 3){
+    const el = marcarErro("f-nome","e-nome"); primeiro = primeiro || el;
+  }
+  if(!emailValido(email)){
+    const el = marcarErro("f-email","e-email"); primeiro = primeiro || el;
+  }
+  if(!ok){
+    const bc = $("box-consent"); if(bc) bc.classList.add("erro");
+    const m = $("e-consent"); if(m) m.classList.add("on");
+    primeiro = primeiro || bc;
+  }
+  if(primeiro){
+    try{ primeiro.scrollIntoView({block:"center"}); }catch(e){}
+    if(primeiro.focus && primeiro.tagName === "INPUT") primeiro.focus();
+    toast("Falta preencher um campo");
+    return;
+  }
+
+  $("f-nome").value = nome; $("f-email").value = email;
+  try{ if(document.activeElement && document.activeElement.blur) document.activeElement.blur(); }catch(e){}
+
+  state.perfil = { nome:nome, email:email, vaga:($("f-vaga").value||"").trim() };
+  state.respostas = new Array(QUESTIONS.length).fill(null);
+  state.idx = 0;
+  stash();
+  renderQuestion();
+  show("screen-test");
+}
+["f-nome","f-email","f-consent"].forEach(id=>{
+  on(id,"input",limparErros); on(id,"change",limparErros);
+});
+on("f-nome","keydown", e=>{ if(e.key==="Enter"){ e.preventDefault(); $("f-email").focus(); } });
+on("f-email","keydown", e=>{ if(e.key==="Enter"){ e.preventDefault(); $("f-email").blur(); } });
+on("btn-start","click", comecar);
+on("btn-back","click", voltar);
+on("btn-restart","click", ()=>{
+  state.respostas = new Array(QUESTIONS.length).fill(null); state.idx = 0; state.resultado = null;
+  try{ sessionStorage.removeItem("sync_mbti_run"); }catch(e){}
+  show("screen-start");
+});
+on("sh-copy","click", copiarTexto);
+on("sh-file","click", baixarArquivo);
+
+on("btn-rh-open","click", ()=>{ location.hash = "rh"; show("screen-rh"); });
+on("btn-rh-exit","click", ()=>{ location.hash = ""; show("screen-start"); });
+on("btn-pin","click", entrarPainel);
+on("f-pin","keydown", e=>{ if(e.key==="Enter") entrarPainel(); });
+function entrarPainel(){
+  if($("f-pin").value === CONFIG.senhaPainel){
+    $("rh-gate").style.display = "none";
+    $("rh-body").style.display = "block";
+    renderPainel();
+  } else { toast("Senha incorreta"); $("f-pin").select(); }
+}
+on("btn-csv","click", exportarCSV);
+on("btn-reload","click", ()=>renderPainel().then(()=>toast("Lista atualizada")));
+on("btn-paste-toggle","click", ()=>{
+  const b = $("paste-box");
+  b.style.display = b.style.display === "none" ? "block" : "none";
+  if(b.style.display === "block") $("paste-area").focus();
+});
+on("btn-paste-save","click", colarResultado);
+
+if(location.hash.replace("#","") === "rh"){ show("screen-rh"); }
+else if(unstash()){
+  renderQuestion();
+  show("screen-test");
+}
+</script>
+
+</body>
+</html>
